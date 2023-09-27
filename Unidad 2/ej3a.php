@@ -6,7 +6,7 @@
 			padding: 3px;
 		}
 	</style>
-	<title>Practica ej1a.php</title>
+	<title>Practica ej3a.php</title>
 </head>
 <body>
 	<?php
