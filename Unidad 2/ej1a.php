@@ -92,8 +92,8 @@
 				
 			}
 			
-			
 			$tabla = sprintf("<table>%s</table>", $filas);
+			
 			
 			echo sprintf($tabla);
 			
