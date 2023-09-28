@@ -22,17 +22,17 @@
 		
 		printf("</br>");
 		printf("</br>");
-		$notas = array_values($alumnos_notas); // Obtengo los valores para poder recorrerlos con un Indice
-		printf("Segunda posicion ".$notas[1]);
+		printf(current($alumnos_notas)." Valor de la primera posicion");
 		printf("</br>");
-		printf("Tercera posicion ".$notas[2]);
+		printf(next($alumnos_notas)." Siguiente valor");
 		printf("</br>");
-		printf("Ultima posicion posicion ".$notas[count($notas)-1]);
+		printf(end($alumnos_notas)." Ultimo valor del array");
 		printf("</br>");
 		printf("</br>");
 		
-		asort($alumnos_notas, 1); // Compara los VALORES y sabe que son numericos por el 1. KSORT compara en las Keys
-		print_r($alumnos_notas);
+		asort($alumnos_notas, 1);
+		print_r($alumnos_notas); // Ordeno el array según el valor ascendente
+		printf("</br>");
 	?>
 	
 </body>
