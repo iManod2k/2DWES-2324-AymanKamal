@@ -33,6 +33,10 @@
 		asort($alumnos_notas, 1);
 		print_r($alumnos_notas); // Ordeno el array según el valor ascendente
 		printf("</br>");
+		printf("</br>");
+		printf("Primer elemento de nuevo: ".reset($alumnos_notas));
+		printf("</br>");
+		printf("Ultimo elemento de nuevo: ".end($alumnos_notas));
 	?>
 	
 </body>
