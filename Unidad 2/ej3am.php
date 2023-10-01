@@ -46,7 +46,7 @@
 			//COLUMNA
 			$cont_columna_abajo = 0;
 			while($cont_columna_abajo < $filas){
-				$suma_por_columnas .= "(".$c.",".$f.")".$arrayMulti[$cont_columna_abajo][$f]."</br>";
+				$suma_por_columnas .= "(".$cont_columna_abajo.",".$f.")".$arrayMulti[$cont_columna_abajo][$f]."</br>";
 				$cont_columna_abajo++;
 			}
 		}
