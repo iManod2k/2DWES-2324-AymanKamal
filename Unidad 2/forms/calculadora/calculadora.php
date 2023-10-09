@@ -1,9 +1,11 @@
 <?php
+
+	include '../funciones.php';
 	echo "<h1>Calculadora</h1>";
 	echo "metodo usado -> ".$_SERVER["REQUEST_METHOD"];
 	
-	$num1 = $_POST['op1'];
-	$num2= $_POST['op2'];
+	$num1 = limpiar_data($_POST['op1']);
+	$num2= limpiar_data($_POST['op2']);
 	$resul;
 	
 	$tipo_operacion = $_POST['tipo_op'];

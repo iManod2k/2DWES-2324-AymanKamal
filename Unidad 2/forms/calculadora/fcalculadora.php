@@ -20,21 +20,16 @@
 		</form>
 		
 		<?php
-		
-<<<<<<< HEAD:Unidad 2/forms/calculadora/calculadora/fcalculadora.php
+
 		# Include -> Advierte | Requiere -> Detiene ante problema
 		include '../funciones.php';
 		
-		
-		
-=======
->>>>>>> parent of 73d0f74 (Corregido y con añadidos ej1 fcalculadora):Unidad 2/forms/calculadora/fcalculadora.php
 			if($_SERVER['REQUEST_METHOD'] == "POST"){
 				
 				echo "metodo usado -> ".$_SERVER["REQUEST_METHOD"];
 	
-				$num1 = $_POST['op1'];
-				$num2= $_POST['op2'];
+				$num1 = limpiar_data($_POST['op1']);
+				$num2= limpiar_data($_POST['op2']);
 				$resul;
 				
 				$tipo_operacion = $_POST['tipo_op'];
