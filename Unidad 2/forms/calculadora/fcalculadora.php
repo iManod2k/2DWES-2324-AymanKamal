@@ -2,12 +2,12 @@
 	<body>
 		<h1>Calculadora</h1>
 		
-		<form name="calcu" action="fcalculadora.php" method="post">		
+		<form name="calcu" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">		
 			<label>Operando1</label>
-			<input type="text" name="op1" value="5"></input>
+			<input type="number" name="op1" value="5"></input>
 			<br><br>
 			<label>Operando2</label>
-			<input type="text" name="op2" value="5"></input>
+			<input type="number" name="op2" value="5"></input>
 			<br><br>
 			<label>Selecciona operacion:</label>
 			<input type="radio" checked name="tipo_op" value="s">Sumar</input>
@@ -21,12 +21,17 @@
 		
 		<?php
 		
+		# Include -> Advierte | Requiere -> Detiene ante problema
+		include 'funciones.php';
+		
+		
+		
 			if($_SERVER['REQUEST_METHOD'] == "POST"){
 				
 				echo "metodo usado -> ".$_SERVER["REQUEST_METHOD"];
 	
-				$num1 = $_POST['op1'];
-				$num2= $_POST['op2'];
+				$num1 = limpiar_data($_POST['op1']);
+				$num2= limpiar_data($_POST['op2']);
 				$resul;
 				
 				$tipo_operacion = $_POST['tipo_op'];
