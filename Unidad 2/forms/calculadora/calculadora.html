@@ -1,5 +1,22 @@
 <html>
 	<body>
-		<h1>hola</h1>
+		<h1>Calculadora</h1>
+		
+		<form name="calcu" action="calculadora.php" method="post">		
+			<label>Operando1</label>
+			<input type="text" name="op1" value="5"></input>
+			<br><br>
+			<label>Operando2</label>
+			<input type="text" name="op2" value="5"></input>
+			<br><br>
+			<label>Selecciona operacion:</label>
+			<input type="radio" checked name="tipo_op" value="s">Sumar</input>
+			<input type="radio" name="tipo_op" value="r">Restar</input>
+			<input type="radio" name="tipo_op" value="m">Multiplicar</input>
+			<input type="radio" name="tipo_op" value="d">Dividir</input>
+			<br><br>
+			<input type="submit" value="Enviar"></input>
+			<input type="reset" value="Borrar"></input>
+		</form>
 	</body>
 </html>
