@@ -22,7 +22,7 @@
 		<?php
 		
 		# Include -> Advierte | Requiere -> Detiene ante problema
-		include 'funciones.php';
+		include '../funciones.php';
 		
 		
 		
