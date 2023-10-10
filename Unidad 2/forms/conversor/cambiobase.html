@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<h1>CONVERSOR NUMERICO</h1>
+		
+		<form name="bin_form" action="cambiobase.php" method="post">		
+			<label>Numero Decimal</label>
+			<input name="num_dec" type="number" value="0"></input>
+			<br><br>
+			
+			<input type="radio" id="bin1" name="tipo" value="bin">
+			<label for="bin1">Binario</label>
+			<br>
+			<input type="radio" id="oct2" name="tipo" value="oct">
+			<label for="oct2">Octal</label>
+			<br>
+			<input type="radio" id="hex3" name="tipo" value="hex">
+			<label for="hex3">Hexadecimal</label>
+			<br>
+			<input type="radio" id="todo4" name="tipo" value="todo" checked>
+			<label for="todo4">Todos</label>
+			<br>
+			<br>
+			
+			<input type="submit" value="Enviar"></input>
+			<input type="reset" value="Borrar"></input>
+		</form>
+	</body>
+</html>
