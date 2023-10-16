@@ -20,4 +20,9 @@
 		}
 		return (int)$resul;
 	}
+	
+	function num_binarioIP($valor){
+		
+		return str_pad(sprintf("%b", $valor), 8, "0", STR_PAD_LEFT);
+	}
 ?>
