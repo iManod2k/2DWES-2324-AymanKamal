@@ -6,6 +6,17 @@
 		return $data;
 	}
 	
+	function verificarEmail($valor){
+		return preg_match("/^[a-zA-Z0-9-_.]+[@][a-zA-Z]{2,5}[.](com|es)$/",$valor);
+	}
+	function verificarNombreApellidos($valor){
+		if(strlen($valor)){
+			return preg_match("/^[a-zA-Z ]{1,}$/",$valor);
+		}else {
+			return false;
+		}
+	}
+	
 	
 	
 	
