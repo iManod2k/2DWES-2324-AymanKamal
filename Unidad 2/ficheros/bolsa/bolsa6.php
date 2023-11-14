@@ -15,6 +15,7 @@
 			$max_cotizacion = 0;
 			$min_cotizacion = 0;
 			$max_volumen = 0;
+			$min_volumen = 0;
 			echo "<p>Total de Valores: ".count($datos)."</p>";
 			
 			forEach($datos as $key => $value){
@@ -29,6 +30,8 @@
 				
 				if($numero_v > $max_volumen){
 					$max_volumen = $numero_v;
+				}else if($numero_v < $max_volumen){
+					$min_volumen = $numero_v;
 				}
 				
 			}
@@ -49,6 +52,34 @@
 			
 			echo "<p>Minimo Cotizacion: ".$min_cotizacion."</p>";
 			echo "<p>Maximo Volumen: ".$max_volumen."</p>";
+			echo "<p>Minimo Volumen: ".$min_volumen."</p>";
+			
+			
+			$max_capitalizacion = 0;
+			$min_capitalizacion = 0;
+			
+			forEach($datos as $key => $value){
+				
+				$numero = floatval(str_replace(".","",$value[7]));
+				
+				if($numero > $max_capitalizacion){
+					$max_capitalizacion = $numero;
+				}
+			}
+			
+			$min_capitalizacion = $max_capitalizacion;
+			
+			forEach($datos as $key => $value){
+				
+				$numero = floatval(str_replace(".","",$value[7]));
+				
+				if($numero < $min_capitalizacion){
+					$min_capitalizacion = $numero;
+				}
+			}
+			
+			echo "<p>Minimo Capitalizacion: ".$min_capitalizacion."</p>";
+			echo "<p>Maximo Capitalizacion: ".$max_capitalizacion."</p>";
 			
 			
 	?>
