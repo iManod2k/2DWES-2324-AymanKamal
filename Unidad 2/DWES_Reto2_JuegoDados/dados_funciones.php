@@ -84,7 +84,7 @@
 
 				if($num_dados >= 2){
 					$numeros_repetidos = count(array_count_values($jugadoresPuntuacion[$keys]));
-					// Si en las X casillas ha encontrado 1 único número... quiere decir que es el mismo en las 4.
+					// Si en las X casillas ha encontrado 1 único número... quiere decir que es el mismo en todas las columnas.
 					// Lo que quiere decir que se repite X (máximo) de veces
 					if($numeros_repetidos == 1){
 						$total_puntos += 100;
