@@ -1,0 +1,12 @@
+Lin#6#4#10
+Carlos#4#5#9
+Ayman#5#3#8
+Ivan#3#1#4
+
+
+Ivan#2#5#7
+Carlos#5#1#6
+Ayman#3#2#5
+Lin#2#1#3
+
+
