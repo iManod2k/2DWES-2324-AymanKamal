@@ -37,8 +37,7 @@
 				INSERT INTO emple_dpto (dni,cod_dpto,fecha_ini,fecha_fin) VALUES (:cod_emp,:cod_dpto,curdate(),\"\");";
 
 			try {
-			$conn = new PDO("mysql:host=$servername;dbname=".$dbname, 
-			$username, $password);
+			$conn = new PDO("mysql:host=$servername;dbname=".$dbname, $username, $password);
 			// set the PDO error mode to exception
 			$conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			echo "Connected successfully";
