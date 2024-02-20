@@ -10,8 +10,8 @@
 	$password = $_POST['password'];
 	
 
-	// $conexion = new Database();
-	$user_exist = Database::is_userExist($email, $password);
+	$conexion = new Database();
+	$user_exist = $conexion -> is_userExist($email, $password);
 
 	if( count($user_exist) == 1){
 

@@ -1,4 +1,7 @@
 <?php
+	session_start();
+?>
+<?php
 
 
 	require_once("../models/db_connexion.php");
@@ -7,19 +10,41 @@
 
 	if( !empty($_GET) ){
 
-		// $conexion = new Database();
-		// $conexion = $conexion -> create_connection_persistent();
-		// $conexion = $conexion -> get_staticConnection();
-
-		$conexion = Database::get_staticConnection();
 
 		$info = decode_payment_info();
 		
 			if ($info['Ds_Response'] >= "0000" && $info['Ds_Response'] <= "0099") {
 
-				$conexion -> commit();
+				$conexion = new Database();
+
+				$fecha_actual_alq_string = $_SESSION['info_compra']['fecha_actual_alq_string'];
+				$precio_total = $_SESSION['info_compra']['precio_total'];
+				$idcliente = $_SESSION['info_compra']['idcliente'];
+				$matricula = $_SESSION['info_compra']['matricula'];
+
+
+				$fecha_actual = new DateTime();
+				$fecha_actual_string = $fecha_actual -> format('Y-m-d H:i:s');
+				
+
+				$conn = $conexion -> create_persistent_connection();
+			
+				$conn -> setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+				$stmt1 = $conn -> prepare("UPDATE ralquileres
+											SET fechahorapago = '$fecha_actual_string';
+											WHERE idcliente = '$idcliente' AND matricula = '$matricula';");
+				$stmt1 -> execute();
+
+				// $stmt2 = $conn -> prepare("UPDATE rvehiculos
+				// 							SET disponible = 'S'
+				// 							WHERE matricula = '$matricula';");
+				// $stmt2 -> execute();
+
+				$conn = null;
+
 			}else {
-				$conexion -> rollback();
+				// Nada
 			}
 
 		// header("Location: ../movdevolver.php");

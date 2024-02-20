@@ -28,7 +28,7 @@ require ("../models/db_connexion.php");
 			$matricula = $_POST['vehiculos'];
 			$idcliente = $_SESSION['info_user']['idcliente'];
 
-			// $conexion = new Database();
-			Database::pay_rentedCar($idcliente, $matricula);
+			$conexion = new Database();
+			$conexion -> pay_rentedCar($idcliente, $matricula);
 		}
 ?>

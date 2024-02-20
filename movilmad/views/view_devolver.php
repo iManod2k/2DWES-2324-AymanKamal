@@ -2,15 +2,15 @@
 	
 	include("./models/db_connexion.php");
 
-	// $conn = new Database();
+	$conn = new Database();
 
 
 	function show_inRent(){
 
-		// global $conn;
+		global $conn;
 		$user = $_SESSION['info_user']['idcliente'];
 
-		$rented = Database::user_rentedCars($user);
+		$rented = $conn -> user_rentedCars($user);
 
 		$options = "";
 
